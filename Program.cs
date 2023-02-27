@@ -11,7 +11,7 @@ internal class Program
         var videoEncoder = new VideoEncoder(); //publisher
         MailService mailService = new MailService(); //subscriber1
         videoEncoder.VideoEncoded += mailService.OnVideoEncoded;
-        MessageService messageService = new MessageService();
+        MessageService messageService = new MessageService(); //subscriber2
         videoEncoder.VideoEncoded += messageService.OnVideoEncoded;
 
         videoEncoder.Encode(video);
